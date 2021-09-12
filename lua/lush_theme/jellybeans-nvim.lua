@@ -341,8 +341,8 @@ local theme = lush(function()
     TSLiteral            { String };    -- Literal text.
     TSURI                { gui = underline_style };    -- Any URI like a link or email.
     TSNote                  {Todo},
-    TSWarning               {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")},
-    TSDanger                {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")},
+    TSWarning               {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")};
+    TSDanger                {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")};
         --
     -- These groups are for the neovim gitsigns plugin.
 
