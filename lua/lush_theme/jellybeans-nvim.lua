@@ -289,60 +289,60 @@ local theme = lush(function()
     -- TSError -> Error for example, so you do not have to define these unless
     -- you explicitly want to support Treesitter's improved syntax awareness.
 
-    TSAnnotation         { PreProc };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-    TSAttribute          { PreProc };    -- (unstable) TODO: docs
-    TSBoolean            { Boolean };    -- For booleans.
-    TSCharacter          { character };    -- For characters.
-    TSComment            { Comment };    -- For comment blocks.
-    TSConstructor        { Special };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    TSConditional        { Conditional };    -- For keywords related to conditionnals.
-    TSConstant           { Costant };    -- For constants
-    TSConstBuiltin       { Special };    -- For constant that are built in the language: `nil` in Lua.
-    TSConstMacro         { Define };    -- For constants that are defined by macros: `NULL` in C.
-    TSError              { Error };    -- For syntax/parser errors.
-    TSException          { Exception };    -- For exception related keywords.
-    TSField              { Identifier };    -- For fields.
-    TSFloat              { Float };    -- For floats.
-    TSFunction           { Function };    -- For function (calls and definitions).
-    TSFuncBuiltin        { Special };    -- For builtin functions: `table.insert` in Lua.
-    TSFuncMacro          { Macro };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude            { Include };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword            { Keyword };    -- For keywords that don't fall in previous categories.
-    TSKeywordFunction    { Keyword };    -- For keywords used to define a fuction.
-    TSLabel              { Label };    -- For labels: `label:` in C and `:label:` in Lua.
-    TSMethod             { Function };    -- For method calls and definitions.
-    TSNamespace          { Include };    -- For identifiers referring to modules and namespaces.
-    TSNone               {};    -- TODO: docs
-    TSNumber             { Number };    -- For all numbers
-    TSOperator           { Operator };    -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter          { Identifier };    -- For parameters of a function.
-    TSParameterReference { TSParameter };    -- For references to parameters of a function.
-    TSProperty           { Identifier };    -- Same as `TSField`.
-    TSPunctDelimiter     { Delimiter };    -- For delimiters ie: `.`
-    TSPunctBracket       { Delimiter };    -- For brackets and parens.
-    TSPunctSpecial       { Delimiter };    -- For special punctutation that does not fall in the catagories before.
-    TSRepeat             { Repeat };    -- For keywords related to loops.
-    TSString             { String };    -- For strings.
-    TSStringRegex        { String };    -- For regexes.
-    TSStringEscape       { String };    -- For escape characters within a string.
-    -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-    TSType               { Type };    -- For types.
-    TSTypeBuiltin        { Type };    -- For builtin types.
-    TSVariable           { fg = foreground };    -- Any variable name that does not have another highlight.
-    TSVariableBuiltin    { Special };    -- Variable names that are defined by the languages, like `this` or `self`.
+    TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+    TSAttribute          { PreProc },    -- (unstable) TODO: docs
+    TSBoolean            { Boolean },    -- For booleans.
+    TSCharacter          { character },    -- For characters.
+    TSComment            { Comment },    -- For comment blocks.
+    TSConstructor        { Special },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+    TSConditional        { Conditional },    -- For keywords related to conditionnals.
+    TSConstant           { Costant },    -- For constants
+    TSConstBuiltin       { Special },    -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro         { Define },    -- For constants that are defined by macros: `NULL` in C.
+    TSError              { Error },    -- For syntax/parser errors.
+    TSException          { Exception },    -- For exception related keywords.
+    TSField              { Identifier },    -- For fields.
+    TSFloat              { Float },    -- For floats.
+    TSFunction           { Function },    -- For function (calls and definitions).
+    TSFuncBuiltin        { Special },    -- For builtin functions: `table.insert` in Lua.
+    TSFuncMacro          { Macro },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSInclude            { Include },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword            { Keyword },    -- For keywords that don't fall in previous categories.
+    TSKeywordFunction    { Keyword },    -- For keywords used to define a fuction.
+    TSLabel              { Label },    -- For labels: `label:` in C and `:label:` in Lua.
+    TSMethod             { Function },    -- For method calls and definitions.
+    TSNamespace          { Include },    -- For identifiers referring to modules and namespaces.
+    TSNone               {},    -- TODO: docs
+    TSNumber             { Number },    -- For all numbers
+    TSOperator           { Operator },    -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter          { Identifier },    -- For parameters of a function.
+    TSParameterReference { TSParameter },    -- For references to parameters of a function.
+    TSProperty           { Identifier },    -- Same as `TSField`.
+    TSPunctDelimiter     { Delimiter },    -- For delimiters ie: `.`
+    TSPunctBracket       { Delimiter },    -- For brackets and parens.
+    TSPunctSpecial       { Delimiter },    -- For special punctutation that does not fall in the catagories before.
+    TSRepeat             { Repeat },    -- For keywords related to loops.
+    TSString             { String },    -- For strings.
+    TSStringRegex        { String },    -- For regexes.
+    TSStringEscape       { String },    -- For escape characters within a string.
+    -- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
+    TSType               { Type },    -- For types.
+    TSTypeBuiltin        { Type },    -- For builtin types.
+    TSVariable           { fg = foreground },    -- Any variable name that does not have another highlight.
+    TSVariableBuiltin    { Special },    -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag                { fg = koromiko };    -- Tags like html tag names.
-    TSTagDelimiter       { fg = mantis };    -- Tag delimiter like `<` `>` `/`
-    TSText               { TSNone };    -- For strings considered text in a markup language.
-    TSEmphasis           { gui = italic_style };    -- For text to be represented with emphasis.
-    TSUnderline          { gui = underline_style };    -- For text to be represented with an underline.
-    -- TSStrike             { };    -- For strikethrough text.
-    TSTitle              { Title };    -- Text that is part of a title.
-    TSLiteral            { String };    -- Literal text.
-    TSURI                { gui = underline_style };    -- Any URI like a link or email.
-    TSNote                  {Todo},
-    TSWarning               {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")};
-    TSDanger                {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")};
+    TSTag                { fg = koromiko },    -- Tags like html tag names.
+    TSTagDelimiter       { fg = mantis },    -- Tag delimiter like `<` `>` `/`
+    TSText               { TSNone },    -- For strings considered text in a markup language.
+    TSEmphasis           { gui = italic_style },    -- For text to be represented with emphasis.
+    TSUnderline          { gui = underline_style },    -- For text to be represented with an underline.
+    -- TSStrike             { },    -- For strikethrough text.
+    TSTitle              { Title },    -- Text that is part of a title.
+    TSLiteral            { String },    -- Literal text.
+    TSURI                { gui = underline_style },    -- Any URI like a link or email.
+    TSNote               {Todo},
+    TSWarning            {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")},
+    TSDanger             {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")},
         --
     -- These groups are for the neovim gitsigns plugin.
 
