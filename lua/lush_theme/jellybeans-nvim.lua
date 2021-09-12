@@ -289,7 +289,7 @@ local theme = lush(function()
     -- nSError -> Error for example, so you do not have to define these unless
     -- you explicitly want to support Treesitter's improved syntax awareness.
 
-    TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+    --[[ TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute          { PreProc },    -- (unstable) TODO: docs
     -- TSBoolean            { Boolean },    -- For booleans.
     -- TSCharacter          { Character },    -- For characters.
@@ -339,8 +339,8 @@ local theme = lush(function()
     -- TSStrike             { },    -- For strikethrough text.
     TSTitle              { Title },    -- Text that is part of a title.
     TSLiteral            { String },    -- Literal text.
-    TSURI                { gui = underline_style },    -- Any URI like a link or email.
-    TSNote               { Todo },
+    TSURI                { gui = underline_style },    -- Any URI like a link or email. ]]
+    -- TSNote               { Todo },
     TSWarning            {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")},
     TSDanger             {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")},
         --
