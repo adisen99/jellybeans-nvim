@@ -178,9 +178,9 @@ local theme = lush(function()
     SpellRare    { bg = ripe_plum }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine   { fg = total_black, bg = alto }, -- status line of current window
     StatusLineNC { fg = total_white, bg = gravel }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine      { fg = total_black, bg = foreground }, -- tab pages line, not active tab page label
-    TabLineFill  { fg = background }, -- tab pages line, where there are no labels
-    TabLineSel   { fg = total_black, bg = regent_grey }, -- tab pages line, active tab page label
+    TabLine      {fg = regent_grey, bg = total_black},
+    TabLineFill  {fg = regent_grey, bg = grey_three},
+    TabLineSel   {fg = foreground, bg = grey_three},
     Title        { fg = mantis }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = tundora }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
