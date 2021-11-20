@@ -346,9 +346,9 @@ local theme = lush(function()
         --
     -- These groups are for the neovim gitsigns plugin.
 
-    GitSignsAdd    { fg = '#587C0C', bg = boulder },
-    GitSignsChange { fg = '#0C7D9D', bg = boulder },
-    GitSignsDelete { fg = '#94151B', bg = boulder },
+    GitSignsAdd    { fg = '#587C0C', bg = grey_three },
+    GitSignsChange { fg = '#0C7D9D', bg = grey_three },
+    GitSignsDelete { fg = '#94151B', bg = grey_three },
     -- These groups are for the Nvim Tree
         --
     NvimTreeImageFile     { fg = wewak },
