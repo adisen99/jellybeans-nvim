@@ -291,7 +291,7 @@ local theme = lush(function()
 
     TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute          { PreProc },    -- (unstable) TODO: docs
-    TSBoolean            { Boolean },    -- For booleans.
+    -- TSBoolean            { Boolean },    -- For booleans.
     TSCharacter          { Character },    -- For characters.
     TSComment            { Comment },    -- For comment blocks.
     TSConstructor        { Special },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
@@ -309,7 +309,7 @@ local theme = lush(function()
     TSInclude            { Include },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword            { Keyword },    -- For keywords that don't fall in previous categories.
     TSKeywordFunction    { Keyword },    -- For keywords used to define a fuction.
-    TSLabel              { Label },    -- For labels: `label:` in C and `:label:` in Lua.
+    -- TSLabel              { Label },    -- For labels: `label:` in C and `:label:` in Lua.
     TSMethod             { Function },    -- For method calls and definitions.
     TSNamespace          { Include },    -- For identifiers referring to modules and namespaces.
     TSNone               {},    -- TODO: docs
@@ -370,14 +370,14 @@ local theme = lush(function()
     packerFail {ErrorMsg},
     packerStatusFail {ErrorMsg},
     packerSuccess {fg = green_smoke},
-    packerBreakingChange {WarningMsg},
+    packerBreakingChange {ErrorMsg},
     packerString {String},
     packerStatusSuccess {Constant},
     packerStatusCommit {Constant},
-    packerProgress {Boolean},
-    packerBool {Boolean},
+    -- packerProgress {Boolean},
+    -- packerBool {Boolean},
     packerHash {Identifier},
-    packerPackageName {Label},
+    -- packerPackageName {Label},
     packerStatus {Type},
     packerOutput {Type},
     packerRelDate {Comment},
