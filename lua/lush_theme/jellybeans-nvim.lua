@@ -172,7 +172,7 @@ local theme = lush(function()
     QuickFixLine { bg = bright_grey }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { fg = wewak, bg = cocoa_brown }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey   { fg = tundora, bg = grey_one }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad     { bg = old_brick }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+    SpellBad     { bg = old_brick }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap     { bg = dark_blue }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal   { bg = casal }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare    { bg = ripe_plum }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
@@ -289,31 +289,31 @@ local theme = lush(function()
     -- nSError -> Error for example, so you do not have to define these unless
     -- you explicitly want to support Treesitter's improved syntax awareness.
 
-    --[[ TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+    TSAnnotation         { PreProc },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute          { PreProc },    -- (unstable) TODO: docs
-    -- TSBoolean            { Boolean },    -- For booleans.
-    -- TSCharacter          { Character },    -- For characters.
+    TSBoolean            { Boolean },    -- For booleans.
+    TSCharacter          { Character },    -- For characters.
     TSComment            { Comment },    -- For comment blocks.
     TSConstructor        { Special },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    -- TSConditional        { Conditional },    -- For keywords related to conditionnals.
-    TSConstant           { Costant },    -- For constants
+    TSConditional        { Conditional },    -- For keywords related to conditionnals.
+    TSConstant           { Constant },    -- For constants
     TSConstBuiltin       { Special },    -- For constant that are built in the language: `nil` in Lua.
-    -- TSConstMacro         { Define },    -- For constants that are defined by macros: `NULL` in C.
+    TSConstMacro         { Define },    -- For constants that are defined by macros: `NULL` in C.
     TSError              { Error },    -- For syntax/parser errors.
-    -- TSException          { Exception },    -- For exception related keywords.
+    TSException          { Exception },    -- For exception related keywords.
     TSField              { Identifier },    -- For fields.
-    -- TSFloat              { Float },    -- For floats.
+    TSFloat              { Float },    -- For floats.
     TSFunction           { Function },    -- For function (calls and definitions).
     TSFuncBuiltin        { Special },    -- For builtin functions: `table.insert` in Lua.
-    -- TSFuncMacro          { Macro },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude            { Include },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    -- TSKeyword            { Keyword },    -- For keywords that don't fall in previous categories.
-    -- TSKeywordFunction    { Keyword },    -- For keywords used to define a fuction.
-    -- TSLabel              { Label },    -- For labels: `label:` in C and `:label:` in Lua.
-    -- TSMethod             { Function },    -- For method calls and definitions.
-    -- TSNamespace          { Include },    -- For identifiers referring to modules and namespaces.
+    TSFuncMacro          { Macro },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSInclude            { Include },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword            { Keyword },    -- For keywords that don't fall in previous categories.
+    TSKeywordFunction    { Keyword },    -- For keywords used to define a fuction.
+    TSLabel              { Label },    -- For labels: `label:` in C and `:label:` in Lua.
+    TSMethod             { Function },    -- For method calls and definitions.
+    TSNamespace          { Include },    -- For identifiers referring to modules and namespaces.
     TSNone               {},    -- TODO: docs
-    -- TSNumber             { Number },    -- For all numbers
+    TSNumber             { Number },    -- For all numbers
     TSOperator           { Operator },    -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter          { Identifier },    -- For parameters of a function.
     TSParameterReference { TSParameter },    -- For references to parameters of a function.
@@ -321,7 +321,7 @@ local theme = lush(function()
     TSPunctDelimiter     { Delimiter },    -- For delimiters ie: `.`
     TSPunctBracket       { Delimiter },    -- For brackets and parens.
     TSPunctSpecial       { Delimiter },    -- For special punctutation that does not fall in the catagories before.
-    -- TSRepeat             { Repeat },    -- For keywords related to loops.
+    TSRepeat             { Repeat },    -- For keywords related to loops.
     TSString             { String },    -- For strings.
     TSStringRegex        { String },    -- For regexes.
     TSStringEscape       { String },    -- For escape characters within a string.
@@ -339,8 +339,8 @@ local theme = lush(function()
     -- TSStrike             { },    -- For strikethrough text.
     TSTitle              { Title },    -- Text that is part of a title.
     TSLiteral            { String },    -- Literal text.
-    TSURI                { gui = underline_style },    -- Any URI like a link or email. ]]
-    -- TSNote               { Todo },
+    TSURI                { gui = underline_style },    -- Any URI like a link or email.
+    TSNote               { Todo },
     TSWarning            {fg = goldenrod, gui = table_concat({"bold", italic_style}, ",")},
     TSDanger             {fg = koromiko, gui = table_concat({"bold", italic_style}, ",")},
         --
@@ -354,16 +354,34 @@ local theme = lush(function()
     NvimTreeImageFile     { fg = wewak },
     NvimTreeGitDirty      { fg = raw_sienna },
     NvimTreeGitDeleted    { fg = old_brick },
-    NvimTreeGitStaged     { fg = dell }, 
-    NvimTreeGitMerge      { fg = dell }, 
-    NvimTreeGitRenamed    { fg = koromiko }, 
-    NvimTreeGitNew        { fg = koromiko }, 
-    NvimTreeIndentMarker  { fg = grey }, 
-    NvimTreeSymlink       { fg = green_smoke }, 
-    NvimTreeFolderIcon    { fg = calypso }, 
-    NvimTreeRootFolder    { fg = grey_chateau }, 
-    NvimTreeExecFile      { fg = tea_green }, 
-    NvimTreeSpecialFile   { fg = goldenrod } 
+    NvimTreeGitStaged     { fg = dell },
+    NvimTreeGitMerge      { fg = dell },
+    NvimTreeGitRenamed    { fg = koromiko },
+    NvimTreeGitNew        { fg = koromiko },
+    NvimTreeIndentMarker  { fg = grey },
+    NvimTreeSymlink       { fg = green_smoke },
+    NvimTreeFolderIcon    { fg = calypso },
+    NvimTreeRootFolder    { fg = grey_chateau },
+    NvimTreeExecFile      { fg = tea_green },
+    NvimTreeSpecialFile   { fg = goldenrod },
+
+    -- packer
+    packerWorking {fg = morning_glory},
+    packerFail {ErrorMsg},
+    packerStatusFail {ErrorMsg},
+    packerSuccess {fg = green_smoke},
+    packerBreakingChange {WarningMsg},
+    packerString {String},
+    packerStatusSuccess {Constant},
+    packerStatusCommit {Constant},
+    packerProgress {Boolean},
+    packerBool {Boolean},
+    packerHash {Identifier},
+    packerPackageName {Label},
+    packerStatus {Type},
+    packerOutput {Type},
+    packerRelDate {Comment},
+    packerPackageNotLoaded {Comment},
   }
 end)
 
